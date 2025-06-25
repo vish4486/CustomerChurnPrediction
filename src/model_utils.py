@@ -10,26 +10,20 @@ def save_sklearn_model(model, filename):
     os.makedirs("models", exist_ok=True)
     joblib.dump(model, f"models/{filename}")
 
-
 def load_sklearn_model(filename):
     return joblib.load(f"models/{filename}")
-
 
 def save_keras_model(model, filename):
     os.makedirs("models", exist_ok=True)
     model.save(f"models/{filename}")
 
-
 def load_keras_model(filename):
     return load_model(f"models/{filename}")
-
-
 
 def save_plot(fig, filename, subfolder="plots"):
     os.makedirs(f"results/{subfolder}", exist_ok=True)
     fig.savefig(f"results/{subfolder}/{filename}", bbox_inches='tight')
     plt.close(fig)
-
 
 
 def save_model_metrics_table(results, filename="model_metrics_table.png"):
@@ -52,7 +46,6 @@ def save_model_metrics_table(results, filename="model_metrics_table.png"):
     fig.savefig("results/plots/" + filename, bbox_inches='tight', dpi=300)
     plt.close(fig)
 
-
 def export_model_metrics_latex(results, filename="model_metrics_table.tex", subfolder="plots"):
     import os
     os.makedirs(f"results/{subfolder}", exist_ok=True)
@@ -71,7 +64,6 @@ def export_model_metrics_latex(results, filename="model_metrics_table.tex", subf
 \textbf{Model} & \textbf{Best Parameters} & \textbf{Balanced Accuracy} & \textbf{F1 Score} & \textbf{ROC AUC} & $\mu_t$ (s) \\
 \midrule
 """
-
     for _, row in df.iterrows():
         model = row['Model']
         params = str(row['Best Parameters']).replace('_', r'\_').replace(',', r',\\')
@@ -85,6 +77,3 @@ def export_model_metrics_latex(results, filename="model_metrics_table.tex", subf
 
     with open(f"results/{subfolder}/{filename}", "w") as f:
         f.write(latex_code)
-
-
-
