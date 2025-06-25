@@ -10,6 +10,7 @@ import joblib
 import os
 
 
+
 def load_and_inspect_data(filepath):
     df = pd.read_csv(filepath)
     print("Shape of dataset:", df.shape)
@@ -21,13 +22,18 @@ def load_and_inspect_data(filepath):
     return df
 
 
-def visualize_churn_distribution(df):
-    sns.countplot(x='Attrition_Flag', data=df)
-    plt.title('Class Distribution: Churn vs Non-Churn')
-    plt.ylabel('Count')
-    plt.xlabel('Customer Type')
+def visualize_churn_distribution(df, save=False):
+    fig, ax = plt.subplots()
+    sns.countplot(x='Attrition_Flag', data=df, ax=ax)
+    ax.set_title('Class Distribution: Churn vs Non-Churn')
+    ax.set_ylabel('Count')
+    ax.set_xlabel('Customer Type')
     plt.xticks(rotation=15)
-    plt.show()
+
+    if save:
+        save_plot(fig, "churn_distribution.png", subfolder="plots")
+    else:
+        plt.show()
 
 
 def visualize_correlations(df, save=False):
@@ -104,3 +110,39 @@ def preprocess_data(df):
     print(f"X_test shape: {X_test_transformed.shape}")
 
     return X_train_transformed, X_test_transformed, y_train, y_test, preprocessor, processed_columns
+
+
+def perform_additional_eda(df):
+    
+    os.makedirs("plots", exist_ok=True)
+
+    # Numerical histograms
+    num_cols = df.select_dtypes(include=['int64', 'float64']).columns.tolist()
+    for col in num_cols:
+        fig, ax = plt.subplots()
+        sns.histplot(df[col], kde=True, ax=ax)
+        ax.set_title(f'Histogram of {col}')
+        save_plot(fig, f"hist_{col}.png", subfolder="plots")
+
+    # Boxplots for outliers
+    for col in num_cols:
+        fig, ax = plt.subplots()
+        sns.boxplot(x=df[col], ax=ax)
+        ax.set_title(f'Boxplot of {col}')
+        save_plot(fig, f"box_{col}.png", subfolder="plots")
+
+    # Categorical bar plots
+    cat_cols = df.select_dtypes(include=['object']).columns.tolist()
+    for col in cat_cols:
+        fig, ax = plt.subplots()
+        df[col].value_counts().plot(kind='bar', ax=ax)
+        ax.set_title(f'Bar Chart of {col}')
+        save_plot(fig, f"bar_{col}.png", subfolder="plots")
+
+    # Check duplicates
+    duplicates = df.duplicated().sum()
+    print(f"\nDuplicate Rows: {duplicates}")
+
+    # Check inconsistent values (sample)
+    for col in cat_cols:
+        print(f"\nUnique values in '{col}': {df[col].unique()}")
