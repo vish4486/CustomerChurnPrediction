@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pkl
+*.keras
+.venv/
+venv/
+.DS_Store
+results/
+ann_tuning/
+models/
+plots/
+tests/__pycache__/
+.git/
+.github/
+*.log
