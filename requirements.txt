@@ -8,3 +8,5 @@ tensorflow
 joblib
 flask
 keras-tuner
+pytest
+flake8
