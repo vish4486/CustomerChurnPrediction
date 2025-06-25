@@ -1,0 +1,7 @@
+stages:
+  preprocess_data:
+    cmd: python app/main.py
+    deps:
+    - data/BankChurners.csv
+    outs:
+    - data/processed
