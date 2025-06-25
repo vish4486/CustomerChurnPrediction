@@ -55,7 +55,7 @@ def tune_xgboost(X, y):
     scale_pos_weight = counter[0] / counter[1]
 
     grid = GridSearchCV(
-        XGBClassifier(use_label_encoder=False, eval_metric='logloss',random_state=42,scale_pos_weight = scale_pos_weight),
+        XGBClassifier(use_label_encoder=False, eval_metric='logloss', random_state=42, scale_pos_weight=scale_pos_weight),
         param_grid,
         scoring='f1_weighted',
         cv=StratifiedKFold(n_splits=5, shuffle=True, random_state=42),
