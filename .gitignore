@@ -23,3 +23,5 @@ ann_tuning/
 !data/processed/
 !models/
 !results/
+results/plots/*.log
+results/plots/*.aux
