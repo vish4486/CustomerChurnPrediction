@@ -1,10 +1,25 @@
+# Python cache and environment
 *.pyc
 __pycache__/
 .env
-.ipynb_checkpoints/
-.vscode/
-.DS_Store
 venv/
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editor settings
+.vscode/
+
+# DVC tracking metadata is OK (keep .dvc files)
+*.dvc
+
+# IGNORE (optional):
+# ann_tuning folder can be ignored if large tuning artifacts are not needed
 ann_tuning/
-results/
-models/
+
+# ALLOW tracked data, models, and results for academic submission
+!data/raw/BankChurners.csv
+!data/processed/
+!models/
+!results/
