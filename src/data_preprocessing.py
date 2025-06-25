@@ -111,7 +111,6 @@ def preprocess_data(df):
 
 
 def perform_additional_eda(df):
-    
     os.makedirs("plots", exist_ok=True)
     # Numerical histograms
     num_cols = df.select_dtypes(include=['int64', 'float64']).columns.tolist()

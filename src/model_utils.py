@@ -10,15 +10,19 @@ def save_sklearn_model(model, filename):
     os.makedirs("models", exist_ok=True)
     joblib.dump(model, f"models/{filename}")
 
+
 def load_sklearn_model(filename):
     return joblib.load(f"models/{filename}")
+
 
 def save_keras_model(model, filename):
     os.makedirs("models", exist_ok=True)
     model.save(f"models/{filename}")
 
+
 def load_keras_model(filename):
     return load_model(f"models/{filename}")
+
 
 def save_plot(fig, filename, subfolder="plots"):
     os.makedirs(f"results/{subfolder}", exist_ok=True)
@@ -45,6 +49,7 @@ def save_model_metrics_table(results, filename="model_metrics_table.png"):
     fig.tight_layout()
     fig.savefig("results/plots/" + filename, bbox_inches='tight', dpi=300)
     plt.close(fig)
+
 
 def export_model_metrics_latex(results, filename="model_metrics_table.tex", subfolder="plots"):
     import os
