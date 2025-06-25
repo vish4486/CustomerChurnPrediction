@@ -6,12 +6,12 @@ from src.data_preprocessing import preprocess_data
 def sample_dataframe():
     # Mocked minimal dataset
     data = {
-        'Attrition_Flag': ['Existing Customer', 'Attrited Customer'],
-        'Customer_Age': [45, 50],
-        'Total_Trans_Ct': [42, 55],
-        'Total_Amt_Chng_Q4_Q1': [1.2, 1.1],
-        'Gender': ['M', 'F'],
-        'Income_Category': ['$60K - $80K', 'Less than $40K']
+        'Attrition_Flag': ['Existing Customer', 'Attrited Customer'] * 3,
+        'Customer_Age': [45, 50, 35, 60, 40, 55],
+        'Total_Trans_Ct': [42, 55, 30, 65, 38, 72],
+        'Total_Amt_Chng_Q4_Q1': [1.2, 1.1, 0.8, 1.5, 1.0, 0.9],
+        'Gender': ['M', 'F', 'F', 'M', 'M', 'F'],
+        'Income_Category': ['$60K - $80K', 'Less than $40K', 'Less than $40K', '$80K - $120K', '$60K - $80K', '$40K - $60K']
     }
     return pd.DataFrame(data)
 
