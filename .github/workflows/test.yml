@@ -31,3 +31,9 @@ jobs:
       - name: 🧼 Run flake8 linter
         run: |
           flake8 src/ --ignore=E501
+      
+      - name: 🔁 Check DVC pipeline
+        run: |
+          pip install dvc
+          dvc status || true
+

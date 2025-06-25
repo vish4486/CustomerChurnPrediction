@@ -10,3 +10,4 @@ flask
 keras-tuner
 pytest
 flake8
+dvc
