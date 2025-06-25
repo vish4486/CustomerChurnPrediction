@@ -14,10 +14,9 @@ from sklearn.metrics import (
     roc_auc_score
 )
 from sklearn.utils import class_weight
-import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
-from tensorflow.keras.optimizers import Adam
+
 
 
 def evaluate_model_advanced(name, model, X_train, y_train, X_test, y_test):
