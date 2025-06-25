@@ -79,6 +79,5 @@ def export_model_metrics_latex(results, filename="model_metrics_table.tex", subf
 \end{tabular}
 \end{table}
 """
-
     with open(f"results/{subfolder}/{filename}", "w") as f:
         f.write(latex_code)
