@@ -47,6 +47,7 @@ A machine learning pipeline to predict customer churn based on bank data. This r
 ---
 
 ## 📁 Project Structure (Simplified)
+```
 MLOPS-PROJECT/
 │
 ├── data/ # Contains raw and processed data
@@ -58,6 +59,7 @@ MLOPS-PROJECT/
 ├── app/main.py # Entry-point pipeline
 ├── dvc.yaml + dvc.lock # DVC stage definition
 ├── requirements.txt # Python dependencies
+```
 
 
 ---
