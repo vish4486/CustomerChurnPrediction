@@ -46,7 +46,7 @@ def main():
     #tuned_results.append(evaluate_model_advanced("Tuned Random Forest", best_rf, X_train, y_train, X_test, y_test))
     #tuned_results.append(evaluate_model_advanced("Tuned XGBoost", best_xgb, X_train, y_train, X_test, y_test))
     #tuned_results.append(evaluate_model_advanced("Tuned ANN", best_ann, X_train, y_train, X_test, y_test))
-    tuned_results = []
+    
 
     tuned_results.append({
     **evaluate_model_advanced("Tuned Logistic Regression", best_lr, X_train, y_train, X_test, y_test),
