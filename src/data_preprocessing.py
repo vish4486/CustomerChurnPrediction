@@ -8,6 +8,7 @@ import seaborn as sns
 import joblib
 import os
 
+
 def load_and_inspect_data(filepath):
     df = pd.read_csv(filepath)
     print("Shape of dataset:", df.shape)
@@ -17,6 +18,7 @@ def load_and_inspect_data(filepath):
     print("\nDescriptive Stats:\n", df.describe(include='all'))
     print("\nData Types:\n", df.dtypes)
     return df
+
 
 def visualize_churn_distribution(df, save=False):
     fig, ax = plt.subplots()
@@ -30,6 +32,7 @@ def visualize_churn_distribution(df, save=False):
         save_plot(fig, "churn_distribution.png", subfolder="plots")
     else:
         plt.show()
+
 
 def visualize_correlations(df, save=False):
     drop_cols = [
@@ -48,6 +51,7 @@ def visualize_correlations(df, save=False):
         save_plot(fig, "feature_correlation_heatmap.png", subfolder="plots")
     else:
         plt.show()
+
 
 def preprocess_data(df):
     os.makedirs("data/processed", exist_ok=True)
@@ -104,6 +108,7 @@ def preprocess_data(df):
     print(f"X_test shape: {X_test_transformed.shape}")
 
     return X_train_transformed, X_test_transformed, y_train, y_test, preprocessor, processed_columns
+
 
 def perform_additional_eda(df):
     
