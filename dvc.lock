@@ -1,0 +1,15 @@
+schema: '2.0'
+stages:
+  preprocess_data:
+    cmd: python app/main.py
+    deps:
+    - path: data/BankChurners.csv
+      hash: md5
+      md5: c8c0eb266d15fba793ede87f94eddad8
+      size: 1510880
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: 635737e2189c850517f3c30ca598663f.dir
+      size: 3086876
+      nfiles: 6
