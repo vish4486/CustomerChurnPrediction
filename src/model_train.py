@@ -18,7 +18,6 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 
 
-
 def evaluate_model_advanced(name, model, X_train, y_train, X_test, y_test):
     start = time.time()
     model.fit(X_train, y_train)
