@@ -11,3 +11,4 @@ keras-tuner
 pytest
 flake8
 dvc
+streamlit

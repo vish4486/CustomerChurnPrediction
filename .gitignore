@@ -11,17 +11,23 @@ venv/
 # Editor settings
 .vscode/
 
-# DVC tracking metadata is OK (keep .dvc files)
+# DVC cache and local metadata
+.dvc/cache/
+.dvc/tmp/
 *.dvc
 
-# IGNORE (optional):
-# ann_tuning folder can be ignored if large tuning artifacts are not needed
+# Ignore tuning logs and artifacts
 ann_tuning/
-
-# ALLOW tracked data, models, and results for academic submission
-!data/raw/BankChurners.csv
-!data/processed/
-!models/
-!results/
 results/plots/*.log
 results/plots/*.aux
+
+# Keep these in version control (tracked artifacts)
+!data/processed/**
+!models/**
+!results/**
+
+# Explicitly keep logs and prediction tracking if needed
+!logs/**
+
+# Optional: If using Streamlit logs or predictions
+!app/streamlit_app.py
