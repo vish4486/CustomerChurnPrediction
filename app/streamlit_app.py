@@ -10,6 +10,7 @@ with open("models/best_model_meta.json", "r") as f:
 
 model_type = meta["best_model_type"]
 timestamp = meta["timestamp"]
+top_features = meta.get("top_features", [])
 
 model_path = "models/best_model.pkl" if "ANN" not in model_type else f"models/ann_model_{timestamp}.keras"
 model = load_model(model_path) if "ANN" in model_type else joblib.load(model_path)
@@ -29,19 +30,20 @@ user_input = {
     "Card_Category": st.selectbox("Card Category", ["Blue", "Silver", "Gold", "Platinum"]),
 }
 
-# === Step 2: Advanced Inputs from Top Features ===
+# === Step 2: Advanced Inputs from Top Features (Dynamic) ===
+advanced_inputs = {}
 with st.expander("Optional: Advanced Transactional Features"):
-    user_input["Total_Trans_Ct"] = st.number_input("Total_Trans_Ct", value=50)
-    user_input["Total_Revolving_Bal"] = st.number_input("Total_Revolving_Bal", value=500.0)
-    user_input["Total_Relationship_Count"] = st.number_input("Total_Relationship_Count", value=3)
-    user_input["Total_Trans_Amt"] = st.number_input("Total_Trans_Amt", value=5000.0)
-    user_input["Transaction_Intensity"] = st.number_input("Transaction_Intensity", value=5.0)
-    user_input["Total_Ct_Chng_Q4_Q1"] = st.number_input("Total_Ct_Chng_Q4_Q1", value=1.2)
-    user_input["Months_Inactive_12_mon"] = st.number_input("Months_Inactive_12_mon", value=2)
-    user_input["Contacts_Count_12_mon"] = st.number_input("Contacts_Count_12_mon", value=2)
-    user_input["Total_Amt_Chng_Q4_Q1"] = st.number_input("Total_Amt_Chng_Q4_Q1", value=1.5)
+    for feature in top_features:
+        if feature.startswith("Card_Category_"):
+            advanced_inputs[feature] = st.selectbox(feature, [0, 1], format_func=lambda x: "Yes" if x == 1 else "No")
+        elif feature in ["Transaction_Intensity", "Total_Amt_Chng_Q4_Q1", "Total_Ct_Chng_Q4_Q1"]:
+            advanced_inputs[feature] = st.number_input(feature, min_value=0.0, step=0.01)
+        else:
+            advanced_inputs[feature] = st.number_input(feature, step=1.0)
 
 # === Step 3: Fill remaining required features with defaults ===
+user_input.update(advanced_inputs)
+
 expected_features = list(preprocessor.feature_names_in_)
 default_values = {
     "Dependent_count": 2,
