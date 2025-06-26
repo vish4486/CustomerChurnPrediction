@@ -11,7 +11,7 @@ from src.hyperparameter_tuning import (
 )
 from src.evaluate import plot_model_performance,display_confusion_matrix,plot_feature_importance
 from src.model_utils import save_sklearn_model, save_keras_model,save_model_metrics_table,export_model_metrics_latex
-
+import pandas as pd
 
 
 
@@ -94,7 +94,7 @@ def main():
         save_sklearn_model(best_lr, "best_model.pkl")
     elif "Random Forest" in best_model_name:
         save_sklearn_model(best_rf, "best_model.pkl")
-    elif "XGBoost" in best_model_name:
+    elif "Tuned XGBoost" in best_model_name:
         save_sklearn_model(best_xgb, "best_model.pkl")
     elif "ANN" in best_model_name:
         save_keras_model(best_ann, "best_model.keras")
@@ -105,6 +105,22 @@ def main():
     "timestamp": timestamp,
     "metrics": best_model_result
     }
+
+    # Add top features if tree-based model
+    if "Tuned XGBoost" in best_model_name:
+        feature_importances = best_xgb.feature_importances_
+        X_train_df = pd.DataFrame(X_train, columns=columns)
+        top_features = pd.Series(feature_importances, index=X_train_df.columns)\
+                        .sort_values(ascending=False).head(10).index.tolist()
+        metadata["top_features"] = top_features
+    elif "Tuned Random Forest" in best_model_name:
+        feature_importances = best_rf.feature_importances_
+        X_train_df = pd.DataFrame(X_train, columns=columns)
+        top_features = pd.Series(feature_importances, index=X_train_df.columns)\
+                        .sort_values(ascending=False).head(10).index.tolist()
+        metadata["top_features"] = top_features
+    
+    metadata["top_features"] = top_features
     with open("models/best_model_meta.json", "w") as f:
         json.dump(metadata, f, indent=4)
     
