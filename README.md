@@ -1,6 +1,6 @@
 # 🧠 Customer Churn Prediction
 
-Predict customer attrition for a bank's credit card service using an end-to-end MLOps pipeline. This project includes data preprocessing, feature engineering, model training, experiment tracking, automated tuning, deployment with Streamlit, and monitoring.
+Predict customer attrition for a bank's credit card service using an end-to-end MLOps pipeline. This project includes data preprocessing, feature engineering, model training, automated tuning, deployment with Streamlit, and monitoring.
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 ![Python](https://img.shields.io/badge/python-3.9-blue.svg)
@@ -20,7 +20,6 @@ Predict customer attrition for a bank's credit card service using an end-to-end 
 
 ✅ Preprocessing pipeline with feature engineering  
 ✅ Hyperparameter tuning (ANN, RF, XGBoost, Logistic Regression)  
-✅ MLflow experiment tracking  
 ✅ Streamlit frontend for predictions  
 ✅ Logging & Monitoring (prediction logs + charts)  
 ✅ Dockerized application  
