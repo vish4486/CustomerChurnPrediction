@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1750937782.6384 "/Users/vishal/Documents/III SEMESTER/MLOPS/MLOPS-PROJECT/results/plots/table_viewer.tex" "table_viewer.pdf" "table_viewer" 1750937783.00766 2
+["pdflatex"] 1751029366.03229 "/Users/vishal/Documents/III SEMESTER/MLOPS/MLOPS-PROJECT/results/plots/table_viewer.tex" "table_viewer.pdf" "table_viewer" 1751029366.40013 2
   "/Users/vishal/Documents/III SEMESTER/MLOPS/MLOPS-PROJECT/results/plots/table_viewer.tex" 1750807482.40064 146 96bd75402c10c1bc755f39d89ec58e9d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -19,8 +19,8 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1750809715 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1750809682 3345738 cda4b93c7e5c9f800fb59947ffd26c69 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "model_metrics_table.tex" 1750937781.70272 799 8f0c4fab75428346de67b508a0e43b2a ""
-  "table_viewer.aux" 1750937782.97305 223 b0b6125077789dcff8dd269a7594f2a1 "pdflatex"
+  "model_metrics_table.tex" 1751029365.03543 800 1b6ecc7ab163b8158d344e8c8604ff3b ""
+  "table_viewer.aux" 1751029366.36827 223 b0b6125077789dcff8dd269a7594f2a1 "pdflatex"
   "table_viewer.tex" 1750807482.40064 146 96bd75402c10c1bc755f39d89ec58e9d ""
   (generated)
   "table_viewer.aux"

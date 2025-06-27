@@ -127,6 +127,7 @@ def main():
 
     # Step 6: Optional visual comparison
     plot_model_performance(tuned_results)
+    save_model_metrics_table(tuned_results)
     export_model_metrics_latex(tuned_results)
 
     # Step 7: Confusion Matrices

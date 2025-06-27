@@ -1,6 +1,6 @@
 {
     "best_model_type": "Tuned XGBoost",
-    "timestamp": "20250626_133621",
+    "timestamp": "20250627_150244",
     "metrics": {
         "Model": "Tuned XGBoost",
         "Balanced Accuracy": 0.946,
@@ -11,7 +11,7 @@
         "FPR": 0.019,
         "FNR": 0.089,
         "ROC AUC": 0.946,
-        "Training Time (s)": 0.439,
+        "Training Time (s)": 0.432,
         "Best Parameters": "{'learning_rate': 0.1, 'max_depth': 6, 'n_estimators': 200}"
     },
     "top_features": [

@@ -21,9 +21,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-INPUT ./table_viewer.aux
-INPUT ./table_viewer.aux
-INPUT table_viewer.aux
 OUTPUT table_viewer.aux
 INPUT ./model_metrics_table.tex
 INPUT ./model_metrics_table.tex

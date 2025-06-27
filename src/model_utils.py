@@ -35,8 +35,8 @@ def save_model_metrics_table(results, filename="model_metrics_table.png"):
     df = pd.DataFrame(results)
 
     # Reorder & rename for LaTeX-style table
-    df = df[['Model', 'Best Parameters', 'Balanced Accuracy', 'F1 Score', 'ROC AUC', 'Training Time (s)']]
-    df.columns = ['Model', 'Best Parameters', 'Balanced Accuracy', 'F1 Score', 'ROC AUC', r'$\mu_t$ (s)']
+    df = df[['Model', 'Balanced Accuracy', 'F1 Score', 'ROC AUC', 'Training Time (s)']]
+    df.columns = ['Model', 'Balanced Accuracy', 'F1 Score', 'ROC AUC', r'$\mu_t$ (s)']
 
     fig, ax = plt.subplots(figsize=(12, len(df) * 0.75 + 1))
     ax.axis('off')

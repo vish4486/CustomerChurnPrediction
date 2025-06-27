@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.25)  26 JUN 2025 13:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.25)  27 JUN 2025 15:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -68,7 +68,8 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count277
 \l__pdf_internal_box=\box52
-) (./table_viewer.aux)
+)
+No file table_viewer.aux.
 \openout1 = `table_viewer.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
@@ -85,7 +86,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -193,7 +193,7 @@ Try to go on, since this might almost work.
 <inserted text> 
                 {
 l.12 ...2': 48,\\ 'act2': 'relu',\\ 'lr': 0.001} &
-                                                   0.869 & 0.94 & 0.869 & 0....
+                                                   0.864 & 0.934 & 0.864 & 0...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -218,15 +218,15 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 1122 strings out of 473190
- 19320 string characters out of 5715800
- 416728 words of memory out of 5000000
- 24432 multiletter control sequences out of 15000+600000
+ 1119 strings out of 473190
+ 19257 string characters out of 5715800
+ 416737 words of memory out of 5000000
+ 24431 multiletter control sequences out of 15000+600000
  559145 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,9n,65p,278b,265s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on table_viewer.pdf (1 page, 52069 bytes).
+Output written on table_viewer.pdf (1 page, 52067 bytes).
 PDF statistics:
  28 PDF objects out of 1000 (max. 8388607)
  16 compressed objects within 1 object stream
