@@ -3,10 +3,34 @@ stages:
   preprocess_data:
     cmd: python app/main.py
     deps:
+    - path: app/main.py
+      hash: md5
+      md5: 0c4056ef5333cc9936ecdb62e1e3d4ce
+      size: 5787
     - path: data/BankChurners.csv
       hash: md5
       md5: c8c0eb266d15fba793ede87f94eddad8
       size: 1510880
+    - path: src/data_preprocessing.py
+      hash: md5
+      md5: d1c0ff374824bc665cc7c76aa18d29e4
+      size: 5675
+    - path: src/evaluate.py
+      hash: md5
+      md5: 579b8a27a02c18c291656d49ca64832c
+      size: 1827
+    - path: src/hyperparameter_tuning.py
+      hash: md5
+      md5: 41b19789026b991ed2698da6fafee11c
+      size: 3290
+    - path: src/model_train.py
+      hash: md5
+      md5: 563f76ce2ed3199c83f6289835bd764a
+      size: 4213
+    - path: src/model_utils.py
+      hash: md5
+      md5: b9deabb8184a9f18127cf598829f2990
+      size: 2739
     outs:
     - path: data/processed
       hash: md5

@@ -3,5 +3,11 @@ stages:
     cmd: python app/main.py
     deps:
     - data/BankChurners.csv
+    - app/main.py
+    - src/data_preprocessing.py
+    - src/model_train.py
+    - src/evaluate.py
+    - src/model_utils.py
+    - src/hyperparameter_tuning.py
     outs:
     - data/processed
